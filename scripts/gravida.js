@@ -1,6 +1,7 @@
 function avancarParaFimMark(number) {
   if (number == 1) {
     document.write(`
+        <p class="resposta">Eu só quero ter meu filho. Continue com o plano.</p>
         <p>
         Mark pede para que você espere no carro. Os minutos se passam, você
         fica mais angustiada e teme que algo tenha dado errado. Após mais de
@@ -15,6 +16,8 @@ function avancarParaFimMark(number) {
         `);
   } else if (number == 2) {
     document.write(`
+        <p class="resposta">Eu não posso viver a minha vida sabendo que tirei a
+        de alguém para isso!</p>
         <p>
         Você não conseguiria viver com este peso na consciência. Você recusa a
         proposta de Mark e vai ter seu filho seguindo seus princípios, mesmo
@@ -56,6 +59,8 @@ function finalizarFase3Mark() {
 
 function textoJaneFase3Mark() {
   document.write(`
+    <p class="resposta">Tudo bem. Mesmo que ele não viva muitos anos, ele terá
+    uma vida com todos os direitos.</p>
     <p>
     Mesmo que isso limite a sua vida e de seu filho a apenas 100 anos, pelo
     menos, ele terá direito a ser um cidadão. Você aceita a proposta e Mark
@@ -81,6 +86,7 @@ function avancarParaFase3Mark(number) {
     textoJaneFase3Mark();
   } else if (number == 2) {
     document.write(`
+        <p class="resposta">Não consigo! Meu filho não vai nascer para viver apenas 100 anos.</p>
         <p>
           Infelizmente, seu instinto materno não te permite limitar a vida do
           seu filho. Você recusa a proposta de Mark e vai ter seu filho
@@ -120,6 +126,7 @@ function finalizarFase2Mark() {
 
 function textoJaneFase2Mark() {
   document.write(`
+    <p class="resposta">Acho melhor ligar para ele.</p>
     <p>
     Você liga para o colega de sua amiga. Seu nome é Mark. Ela havia te dito que,
     para deixar claro o serviço que quer, bastava dizer que "precisava de uma
@@ -189,22 +196,14 @@ function finalizarFase1() {
 
 function textoJaneFase1() {
   document.body.innerHTML = "";
+  document.head.title = "Jane";
+  document.getElementsByTagName(
+    "html"
+  )[0].style.backgroundImage = `url("./../assets/jane-background.jpg")`;
 
   document.write(`
-  <!DOCTYPE html>
-  <html lang="en">
-    <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="./scripts/index.js"></script>
-    <script src="./scripts/gravida.js"></script>
-    <script src="./scripts/policial.js"></script>
-    <script src="./scripts/senhora.js"></script>
-    <link rel="stylesheet" href="./styles/gravida.css" />
-    <title>Jane</title>
-    </head>
-    <body>
+    <main>
+    <h1>Jane</h1>
     <p>
     Você se encontra sozinha, chorando em seu banheiro, pensando que tem apenas
     mais um mês de gestação e que precisa encontrar um jeito de encontrar uma
@@ -226,8 +225,7 @@ function textoJaneFase1() {
     E, então? O que você faz? Segue seus princípios morais ou coloca seu filho
     que irá nascer à frente de tudo?
     </p>
-    </body>
-  </html>
+    </main>
     `);
 
   return setTimeout(finalizarFase1, 5000);

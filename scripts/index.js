@@ -41,7 +41,31 @@ function fazerEscolhaDoPersonagem() {
 }
 
 function textoEscolhaDoPersonagem() {
-  document.body.innerHTML = "";
+  document.write(`
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+    </head>
+    <body>
+
+    </body>
+    </html>
+  `);
+
+  document.head.innerHTML = `
+  <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="./scripts/index.js"></script>
+    <script src="./scripts/gravida.js"></script>
+    <script src="./scripts/policial.js"></script>
+    <script src="./scripts/senhora.js"></script>
+    <link rel="stylesheet" href="./styles/index.css" />
+    <title>Escolha seu personagem</title>
+  `;
+
+  document.body.id = "content";
+
   document.write(`
   <p>
   Você pode decidir o futuro de uma dessas três pessoas. Quem você escolhe?

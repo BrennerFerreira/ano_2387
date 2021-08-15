@@ -1,0 +1,32 @@
+html {
+  background: white url("./../assets/city-background.jpg") center fixed
+    no-repeat;
+  background-size: cover;
+  display: flex;
+  overflow: auto;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  min-height: 47.5%;
+  width: 80%;
+  padding: 2.5% 5%;
+  margin: 50% 5% 0%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: yellow;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+}
+
+button {
+  width: 100px;
+  height: 50px;
+}
+
+.resposta {
+  color: white;
+}
