@@ -58,7 +58,7 @@ function finalizarFase3Mark() {
 }
 
 function textoJaneFase3Mark() {
-  document.write(`
+  var texto = `
     <p class="resposta">Tudo bem. Mesmo que ele não viva muitos anos, ele terá
     uma vida com todos os direitos.</p>
     <p>
@@ -76,9 +76,11 @@ function textoJaneFase3Mark() {
     <p>
     Vale a pena tirar a vida de uma pessoa para dar uma oportunidade a outra?
     </p>
-    `);
+    `;
 
-  return setTimeout(finalizarFase3Mark, 5000);
+  document.write(texto);
+
+  return setTimeout(finalizarFase3Mark, texto.length * 20);
 }
 
 function avancarParaFase3Mark(number) {
@@ -125,7 +127,7 @@ function finalizarFase2Mark() {
 }
 
 function textoJaneFase2Mark() {
-  document.write(`
+  var texto = `
     <p class="resposta">Acho melhor ligar para ele.</p>
     <p>
     Você liga para o colega de sua amiga. Seu nome é Mark. Ela havia te dito que,
@@ -153,9 +155,10 @@ function textoJaneFase2Mark() {
     você fica na dúvida: aceitar a proposta de Mark e limitar a vida do seu
     filho ou recusar e ter o risco de seu filho nunca ser registrado?
     </p>
-    `);
+    `;
+  document.write(texto);
 
-  return setTimeout(finalizarFase2Mark, 5000);
+  return setTimeout(finalizarFase2Mark, texto.length * 20);
 }
 
 function avancarParaFase2(number) {
@@ -201,7 +204,7 @@ function textoJaneFase1() {
     "html"
   )[0].style.backgroundImage = `url("./../assets/jane-background.jpg")`;
 
-  document.write(`
+  texto = `
     <main>
     <h1>Jane</h1>
     <p>
@@ -226,7 +229,8 @@ function textoJaneFase1() {
     que irá nascer à frente de tudo?
     </p>
     </main>
-    `);
+    `;
+  document.write(texto);
 
-  return setTimeout(finalizarFase1, 5000);
+  return setTimeout(finalizarFase1, texto.length * 20);
 }

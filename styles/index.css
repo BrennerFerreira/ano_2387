@@ -15,7 +15,11 @@ body {
   width: 80%;
   padding: 2.5% 5%;
   margin: 50% 5% 0%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-image: linear-gradient(
+    rgba(0, 0, 0, 0.6),
+    rgba(0, 0, 0, 0.6),
+    rgb(0, 0, 0)
+  );
   color: yellow;
   display: flex;
   flex-direction: column;
