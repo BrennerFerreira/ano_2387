@@ -28,7 +28,7 @@ function irParaFaseDoPersonagem(number) {
   if (number == 1) {
     return textoJaneFase1();
   } else if (number == 2) {
-    return policial1();
+    return textoMarkFase1();
   } else if (number == 3) {
     senhora1();
   } else {
@@ -58,8 +58,14 @@ function textoEscolhaDoPersonagem() {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="./scripts/index.js"></script>
     <script src="./scripts/jane.js"></script>
+    <script src="./scripts/janeComMark.js"></script>
+    <script src="./scripts/janeComDiana.js"></script>
     <script src="./scripts/mark.js"></script>
+    <script src="./scripts/markComJane.js"></script>
+    <script src="./scripts/markComDiana.js"></script>
     <script src="./scripts/diana.js"></script>
+    <script src="./scripts/dianaComJane.js"></script>
+    <script src="./scripts/dianaComMark.js"></script>
     <link rel="stylesheet" href="./styles/index.css" />
     <title>Escolha seu personagem</title>
   `;
