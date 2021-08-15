@@ -53,7 +53,7 @@ function textoEscolhaDoPersonagem() {
   `);
 
   document.head.innerHTML = `
-  <meta charset="UTF-8" />
+    <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="./scripts/index.js"></script>
@@ -72,7 +72,7 @@ function textoEscolhaDoPersonagem() {
 
   document.body.id = "content";
 
-  document.write(`
+  var texto = `
   <p>
   Você pode decidir o futuro de uma dessas três pessoas. Quem você escolhe?
   </p>
@@ -91,9 +91,11 @@ function textoEscolhaDoPersonagem() {
   3 - Diana, uma senhora cansada de viver que busca encontrar alegria para
   continuar após perder seu marido.
   </p>
-  `);
+  `;
 
-  setTimeout(fazerEscolhaDoPersonagem, 5000);
+  document.write(texto);
+
+  setTimeout(fazerEscolhaDoPersonagem, texto.length * 20);
 }
 
 function reiniciar() {
