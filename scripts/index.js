@@ -30,7 +30,7 @@ function irParaFaseDoPersonagem(number) {
   } else if (number == 2) {
     return textoMarkFase1();
   } else if (number == 3) {
-    senhora1();
+    return textoDianaFase1();
   } else {
     window.location = "/pages/game-over.html";
   }
