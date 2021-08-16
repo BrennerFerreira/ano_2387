@@ -39,7 +39,7 @@ function textoJaneFase1() {
   document.title = "Jane";
   document.getElementsByTagName(
     "html"
-  )[0].style.backgroundImage = `url("./../assets/jane-background.jpg")`;
+  )[0].style.backgroundImage = `url("./assets/jane-background.jpg")`;
 
   texto = `
     <main>

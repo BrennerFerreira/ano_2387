@@ -39,7 +39,7 @@ function textoDianaFase1() {
   document.title = "Diana";
   document.getElementsByTagName(
     "html"
-  )[0].style.backgroundImage = `url("./../assets/diana-background.jpg")`;
+  )[0].style.backgroundImage = `url("./assets/diana-background.jpg")`;
 
   texto = `
     <main>

@@ -37,7 +37,7 @@ function textoMarkFase1() {
   document.title = "Mark";
   document.getElementsByTagName(
     "html"
-  )[0].style.backgroundImage = `url("./../assets/mark-background.jpg")`;
+  )[0].style.backgroundImage = `url("./assets/mark-background.jpg")`;
 
   texto = `
     <main>
