@@ -13,6 +13,18 @@ html {
   width: 100%;
 }
 
+#mark {
+  background-image: url("./../assets/mark-background.jpg");
+}
+
+#jane {
+  background-image: url("./../assets/jane-background.jpg");
+}
+
+#diana {
+  background-image: url("./../assets/diana-background.jpg");
+}
+
 body {
   min-height: 55%;
   width: 80%;

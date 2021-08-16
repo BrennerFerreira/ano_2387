@@ -37,9 +37,7 @@ function finalizarFase1Jane() {
 function textoJaneFase1() {
   document.body.innerHTML = "";
   document.title = "Jane";
-  document.getElementsByTagName(
-    "html"
-  )[0].style.backgroundImage = `url("./assets/jane-background.jpg")`;
+  document.getElementsByTagName("html")[0].id = "jane";
 
   texto = `
     <main>

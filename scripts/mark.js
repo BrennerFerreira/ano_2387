@@ -35,9 +35,7 @@ function finalizarFase1Mark() {
 function textoMarkFase1() {
   document.body.innerHTML = "";
   document.title = "Mark";
-  document.getElementsByTagName(
-    "html"
-  )[0].style.backgroundImage = `url("./assets/mark-background.jpg")`;
+  document.getElementsByTagName("html")[0].id = "mark";
 
   texto = `
     <main>

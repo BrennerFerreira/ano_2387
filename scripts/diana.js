@@ -37,9 +37,7 @@ function finalizarFase1Diana() {
 function textoDianaFase1() {
   document.body.innerHTML = "";
   document.title = "Diana";
-  document.getElementsByTagName(
-    "html"
-  )[0].style.backgroundImage = `url("./assets/diana-background.jpg")`;
+  document.getElementsByTagName("html")[0].id = "diana";
 
   texto = `
     <main>
