@@ -1,8 +1,6 @@
 function avancarParaFase2Mark(number) {
   if (number == 1) {
-    document.write(`
-        <h1 class="titulo-destacado">Fase 2 Mark e Diana</h1>
-        `);
+    textoMarkComDianaFase2();
   } else if (number == 2) {
     textoMarkComJaneFase2();
   } else {
