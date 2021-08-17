@@ -45,7 +45,7 @@ function avancarParaFimDianaComMark(number) {
             </p>
             `);
   } else {
-    location.href = "/game-over.html";
+    location.href = "./game-over.html";
   }
 
   document.write(`
@@ -151,7 +151,7 @@ function avancarParaDianaComMarkFase3(number) {
             <button onclick="reiniciar()">Jogar novamente</button>
             `);
   } else {
-    location.href = "/game-over.html";
+    location.href = "./game-over.html";
   }
 }
 

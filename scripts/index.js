@@ -33,9 +33,9 @@ function irParaFaseDoPersonagem(number) {
   } else if (number == 3) {
     return textoDianaFase1();
   } else if (number == 42) {
-    location.href = "/easter-egg.html";
+    location.href = "./easter-egg.html";
   } else {
-    location.href = "/game-over.html";
+    location.href = "./game-over.html";
   }
 }
 

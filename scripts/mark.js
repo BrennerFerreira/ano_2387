@@ -4,7 +4,7 @@ function avancarParaFase2Mark(number) {
   } else if (number == 2) {
     textoMarkComJaneFase2();
   } else {
-    location.href = "/game-over.html";
+    location.href = "./game-over.html";
   }
 }
 

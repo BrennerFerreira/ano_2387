@@ -40,7 +40,7 @@ function avancarParaFimMarkComJane(number) {
             </p>
             `);
   } else {
-    location.href = "/game-over.html";
+    location.href = "./game-over.html";
   }
 
   document.write(`
@@ -122,7 +122,7 @@ function avancarParaMarkComJaneFase3(number) {
         <button onclick="reiniciar()">Jogar novamente</button>
     `);
   } else {
-    location.href = "/game-over.html";
+    location.href = "./game-over.html";
   }
 }
 
