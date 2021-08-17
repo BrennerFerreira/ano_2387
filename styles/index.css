@@ -25,6 +25,10 @@ html {
   background-image: url("./../assets/diana-background.jpg");
 }
 
+#easter {
+  background-image: url("./../assets/easter-background.jpg");
+}
+
 body {
   min-height: 55%;
   width: 80%;

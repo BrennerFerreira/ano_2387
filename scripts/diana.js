@@ -6,7 +6,7 @@ function avancarParaFase2Diana(number) {
         <h1 class="titulo-destacado">Fase 2 Diana e Jane</h1>
         `);
   } else {
-    window.location = "/pages/game-over.html";
+    location.href = "/game-over.html";
   }
 }
 
