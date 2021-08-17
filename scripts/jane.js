@@ -2,9 +2,7 @@ function avancarParaFase2Jane(number) {
   if (number == 1) {
     textoJaneComMarkFase2();
   } else if (number == 2) {
-    document.write(`
-        <h1 class="titulo-destacado">Fase 2 Jane e Diana</h1>
-        `);
+    textoJaneComDianaFase2();
   } else {
     location.href = "./game-over.html";
   }
