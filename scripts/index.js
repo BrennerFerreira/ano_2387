@@ -70,8 +70,6 @@ function textoEscolhaDoPersonagem() {
     <title>Escolha seu personagem</title>
   `;
 
-  document.body.id = "content";
-
   var texto = `
   <p>
   Você pode decidir o futuro de uma dessas três pessoas. Quem você escolhe?
