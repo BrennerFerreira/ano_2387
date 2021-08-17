@@ -10,7 +10,8 @@ function escolherPersonagem() {
     if (
       personagemEscolhido == 1 ||
       personagemEscolhido == 2 ||
-      personagemEscolhido == 3
+      personagemEscolhido == 3 ||
+      personagemEscolhido == 42
     ) {
       break;
     }
@@ -31,8 +32,10 @@ function irParaFaseDoPersonagem(number) {
     return textoMarkFase1();
   } else if (number == 3) {
     return textoDianaFase1();
+  } else if (number == 42) {
+    location.href = "/easter-egg.html";
   } else {
-    window.location = "/pages/game-over.html";
+    location.href = "/game-over.html";
   }
 }
 
