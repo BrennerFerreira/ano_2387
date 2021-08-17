@@ -46,6 +46,12 @@ body {
   border-radius: 5px;
 }
 
+h1::selection,
+p::selection {
+  background-color: yellow;
+  color: black;
+}
+
 button {
   width: 150px;
   padding: 17.5px 0;
