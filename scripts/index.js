@@ -99,3 +99,7 @@ function textoEscolhaDoPersonagem() {
 function reiniciar() {
   location.reload();
 }
+
+function voltarAoInicio() {
+  location.href = "/";
+}
