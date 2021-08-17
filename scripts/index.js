@@ -104,5 +104,5 @@ function reiniciar() {
 }
 
 function voltarAoInicio() {
-  location.href = "/";
+  location.href = "./index.html";
 }
