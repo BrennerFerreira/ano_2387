@@ -1,42 +1,15 @@
-function avancarParaFase2Jane(number) {
-  if (number == 1) {
-    textoJaneComMarkFase2();
-  } else if (number == 2) {
-    textoJaneComDianaFase2();
-  } else {
-    location.href = "./game-over.html";
-  }
-}
-
-function escolhaDaFase1Jane() {
-  var opcaoEscolhidaJaneFase1 = prompt(`
-    Qual será a sua escolha?
-    1 - Ligar para o colega da sua amiga
-    2 - Se manter a seus princípios
-  `);
-
-  while (true) {
-    if (opcaoEscolhidaJaneFase1 == 1 || opcaoEscolhidaJaneFase1 == 2) {
-      break;
-    }
-    opcaoEscolhidaJaneFase1 = prompt(`
-      Digite apenas o número da sua opção.
-      1 - Ligar para o colega da sua amiga
-      2 - Se manter a seus princípios
-    `);
-  }
-  return opcaoEscolhidaJaneFase1;
-}
-
 function finalizarFase1Jane() {
-  avancarParaFase2Jane(escolhaDaFase1Jane());
+  avancarParaFase2(
+    mostrarPrompt(
+      "Ligar para o colega da sua amiga",
+      "Se manter a seus princípios"
+    ),
+    textoJaneComMarkFase2,
+    textoJaneComDianaFase2
+  );
 }
 
 function textoJaneFase1() {
-  document.body.innerHTML = "";
-  document.title = "Jane";
-  document.getElementsByTagName("html")[0].id = "jane";
-
   texto = `
     <main>
     <h1>Jane</h1>
@@ -63,7 +36,6 @@ function textoJaneFase1() {
     </p>
     </main>
     `;
-  document.write(texto);
 
-  return setTimeout(finalizarFase1Jane, texto.length * 20);
+  escreverTexto(texto, finalizarFase1Jane);
 }

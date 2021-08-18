@@ -1,7 +1,8 @@
-function avancarParaFimJaneComMark(number) {
-  if (number == 1) {
-    document.write(`
-          <p class="resposta">Eu só quero ter meu filho. Continue com o plano.</p>
+function textoFimDeJogoJaneComMarkOpcao1() {
+  document.write(`
+          <p class="resposta">
+          Eu só quero ter meu filho. Continue com o plano.
+          </p>
           <p>
           Mark pede para que você espere no carro. Os minutos se passam, você
           fica mais angustiada e teme que algo tenha dado errado. Após mais de
@@ -13,57 +14,39 @@ function avancarParaFimJaneComMark(number) {
           Você ainda está nervosa, mas, está aliviada que seu filho poderá ter
           uma vida normal, mesmo que limitada a apenas 100 anos.
           </p>
+          <button onclick="reiniciar()">Jogar novamente</button>
           `);
-  } else if (number == 2) {
-    document.write(`
-          <p class="resposta">Eu não posso viver a minha vida sabendo que tirei a
-          de alguém para isso!</p>
+}
+
+function textoFimDeJogoJaneComMarkOpcao2() {
+  document.write(`
+          <p class="resposta">
+          Eu não posso viver a minha vida sabendo que tirei a de alguém para
+          isso!
+          </p>
           <p>
           Você não conseguiria viver com este peso na consciência. Você recusa a
           proposta de Mark e vai ter seu filho seguindo seus princípios, mesmo
           que ele nunca seja registrado e tenha uma vida normal.
           </p>
-          `);
-  } else {
-    location.href = "./game-over.html";
-  }
-
-  document.write(`
           <button onclick="reiniciar()">Jogar novamente</button>
           `);
 }
 
-function escolhaJaneComMarkFase3() {
-  var opcaoEscolhidaJaneComMarkFase3 = prompt(`
-      Qual será a sua escolha?
-      1 - Seguir com o plano
-      2 - Desistir do plano
-    `);
-
-  while (true) {
-    if (
-      opcaoEscolhidaJaneComMarkFase3 == 1 ||
-      opcaoEscolhidaJaneComMarkFase3 == 2
-    ) {
-      break;
-    }
-    opcaoEscolhidaJaneComMarkFase3 = prompt(`
-        Digite apenas o número da sua opção.
-        1 - Seguir com o plano
-        2 - Desistir do plano
-      `);
-  }
-  return opcaoEscolhidaJaneComMarkFase3;
-}
-
 function finalizarJaneComMarkFase3() {
-  avancarParaFimJaneComMark(escolhaJaneComMarkFase3());
+  avancarParaFase2(
+    mostrarPrompt("Seguir com o plano", "Desistir do plano"),
+    textoFimDeJogoJaneComMarkOpcao1,
+    textoFimDeJogoJaneComMarkOpcao2
+  );
 }
 
 function textoJaneComMarkFase3() {
   var texto = `
-      <p class="resposta">Tudo bem. Mesmo que ele não viva muitos anos, ele terá
-      uma vida com todos os direitos.</p>
+      <p class="resposta">
+      Tudo bem. Mesmo que ele não viva muitos anos, ele terá uma vida com todos
+      os direitos.
+      </p>
       <p>
       Mesmo que isso limite a sua vida e de seu filho a apenas 100 anos, pelo
       menos, ele terá direito a ser um cidadão. Você aceita a proposta e Mark
@@ -81,17 +64,14 @@ function textoJaneComMarkFase3() {
       </p>
       `;
 
-  document.write(texto);
-
-  return setTimeout(finalizarJaneComMarkFase3, texto.length * 20);
+  escreverTexto(texto, finalizarJaneComMarkFase3);
 }
 
-function avancarParaJaneComMarkFase3(number) {
-  if (number == 1) {
-    textoJaneComMarkFase3();
-  } else if (number == 2) {
-    document.write(`
-          <p class="resposta">Não consigo! Meu filho não vai nascer para viver apenas 100 anos.</p>
+function textoFimDeJogoJaneComMarkFase2() {
+  document.write(`
+          <p class="resposta">
+          Não consigo! Meu filho não vai nascer para viver apenas 100 anos.
+          </p>
           <p>
             Infelizmente, seu instinto materno não te permite limitar a vida do
             seu filho. Você recusa a proposta de Mark e vai ter seu filho
@@ -100,41 +80,21 @@ function avancarParaJaneComMarkFase3(number) {
           </p>
           <button onclick="reiniciar()">Jogar novamente</button>
           `);
-  } else {
-    location.href = "./game-over.html";
-  }
-}
-
-function escolhaJaneComMarkFase2() {
-  var opcaoEscolhidaJaneComMarkFase2 = prompt(`
-      Qual será a sua escolha?
-      1 - Aceitar a proposta de Mark
-      2 - Recusar a proposta de Mark
-    `);
-
-  while (true) {
-    if (
-      opcaoEscolhidaJaneComMarkFase2 == 1 ||
-      opcaoEscolhidaJaneComMarkFase2 == 2
-    ) {
-      break;
-    }
-    opcaoEscolhidaJaneComMarkFase2 = prompt(`
-        Digite apenas o número da sua opção.
-        1 - Aceitar a proposta de Mark
-        2 - Recusar a proposta de Mark
-      `);
-  }
-  return opcaoEscolhidaJaneComMarkFase2;
 }
 
 function finalizarJaneComMarkFase2() {
-  avancarParaJaneComMarkFase3(escolhaJaneComMarkFase2());
+  avancarParaFase2(
+    mostrarPrompt("Aceitar a proposta de Mark", "Recusar a proposta de Mark"),
+    textoJaneComMarkFase3,
+    textoFimDeJogoJaneComMarkFase2
+  );
 }
 
 function textoJaneComMarkFase2() {
   var texto = `
-      <p class="resposta">Acho melhor ligar para ele.</p>
+      <p class="resposta">
+      Acho melhor ligar para ele.
+      </p>
       <p>
       Você liga para o colega de sua amiga. Seu nome é Mark. Ela havia te dito que,
       para deixar claro o serviço que quer, bastava dizer que "precisava de uma
@@ -162,7 +122,5 @@ function textoJaneComMarkFase2() {
       filho ou recusar e ter o risco de seu filho nunca ser registrado?
       </p>
       `;
-  document.write(texto);
-
-  return setTimeout(finalizarJaneComMarkFase2, texto.length * 20);
+  escreverTexto(texto, finalizarJaneComMarkFase2);
 }

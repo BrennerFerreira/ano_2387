@@ -1,6 +1,5 @@
-function avancarParaFimJaneComDiana(number) {
-  if (number == 1) {
-    document.write(`
+function textoFimDeJogoJaneComDianaOpcao1() {
+  document.write(`
             <p class="resposta">
             Meu filho vai crescer com todas as oportunidades que ele merece.
             </p>
@@ -16,9 +15,11 @@ function avancarParaFimJaneComDiana(number) {
             Você vê seu olhar escurecendo, olhando para seu filho pela última
             vez: "Seu futuro será incrível." Este foi seu último pensamento.
             </p>
+            <button onclick="reiniciar()">Jogar novamente</button>
             `);
-  } else if (number == 2) {
-    document.write(`
+}
+function textoFimDeJogoJaneComDianaOpcao2() {
+  document.write(`
             <p class="resposta">
             Não posso fazer isso com o meu filho!
             </p>
@@ -27,41 +28,19 @@ function avancarParaFimJaneComDiana(number) {
             criá-lo o melhor que puder. Ele vai crescer sabendo que a mãe dele
             fez de tudo para que ele pudesse crescer bem.
             </p>
-            `);
-  } else {
-    location.href = "./game-over.html";
-  }
-
-  document.write(`
             <button onclick="reiniciar()">Jogar novamente</button>
             `);
 }
 
-function escolhaJaneComDianaFase3() {
-  var opcaoEscolhidaJaneComDianaFase3 = prompt(`
-        Qual será a sua escolha?
-        1 - Trocar a sua vida pelo futuro do seu filho
-        2 - Criá-lo mesmo sem oportunidades
-      `);
-
-  while (true) {
-    if (
-      opcaoEscolhidaJaneComDianaFase3 == 1 ||
-      opcaoEscolhidaJaneComDianaFase3 == 2
-    ) {
-      break;
-    }
-    opcaoEscolhidaJaneComDianaFase3 = prompt(`
-          Digite apenas o número da sua opção.
-          1 - Trocar a sua vida pelo futuro do seu filho
-          2 - Criá-lo mesmo sem oportunidades
-        `);
-  }
-  return opcaoEscolhidaJaneComDianaFase3;
-}
-
 function finalizarJaneComDianaFase3() {
-  avancarParaFimJaneComDiana(escolhaJaneComDianaFase3());
+  avancarParaFase2(
+    mostrarPrompt(
+      "Criá-lo mesmo sem oportunidades",
+      "Trocar a sua vida pelo futuro do seu filho"
+    ),
+    textoFimDeJogoJaneComDianaOpcao1,
+    textoFimDeJogoJaneComDianaOpcao2
+  );
 }
 
 function textoJaneComDianaFase3() {
@@ -117,11 +96,8 @@ function textoJaneComDianaFase3() {
   return setTimeout(finalizarJaneComDianaFase3, texto.length * 20);
 }
 
-function avancarParaJaneComDianaFase3(number) {
-  if (number == 1) {
-    textoJaneComDianaFase3();
-  } else if (number == 2) {
-    document.write(`
+function textoFimDeJogoJaneComDianaFase2() {
+  document.write(`
             <p class="resposta">
             Que loucura! Seguir essa mulher? Jamais!
             </p>
@@ -132,36 +108,14 @@ function avancarParaJaneComDianaFase3(number) {
             </p>
             <button onclick="reiniciar()">Jogar novamente</button>
             `);
-  } else {
-    location.href = "./game-over.html";
-  }
-}
-
-function escolhaJaneComDianaFase2() {
-  var opcaoEscolhidaJaneComDianaFase2 = prompt(`
-        Qual será a sua escolha?
-        1 - Seguir a senhora
-        2 - Despistar a senhora
-      `);
-
-  while (true) {
-    if (
-      opcaoEscolhidaJaneComDianaFase2 == 1 ||
-      opcaoEscolhidaJaneComDianaFase2 == 2
-    ) {
-      break;
-    }
-    opcaoEscolhidaJaneComDianaFase2 = prompt(`
-          Digite apenas o número da sua opção.
-          1 - Seguir a senhora
-          2 - Despistar a senhora
-        `);
-  }
-  return opcaoEscolhidaJaneComDianaFase2;
 }
 
 function finalizarJaneComDianaFase2() {
-  avancarParaJaneComDianaFase3(escolhaJaneComDianaFase2());
+  avancarParaFase2(
+    mostrarPrompt("Seguir a senhora", "Despistar a senhora"),
+    textoJaneComDianaFase3,
+    textoFimDeJogoJaneComDianaFase2
+  );
 }
 
 function textoJaneComDianaFase2() {
@@ -193,7 +147,6 @@ function textoJaneComDianaFase2() {
         acreditar nela?
         </p>
         `;
-  document.write(texto);
 
-  return setTimeout(finalizarJaneComDianaFase2, texto.length * 20);
+  escreverText(texto, finalizarJaneComDianaFase2);
 }
