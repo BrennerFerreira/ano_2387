@@ -35,8 +35,8 @@ function textoFimDeJogoJaneComDianaOpcao2() {
 function finalizarJaneComDianaFase3() {
   avancarParaFase2(
     mostrarPrompt(
-      "Criá-lo mesmo sem oportunidades",
-      "Trocar a sua vida pelo futuro do seu filho"
+      "Trocar a sua vida pelo futuro do seu filho",
+      "Criá-lo mesmo sem oportunidades"
     ),
     textoFimDeJogoJaneComDianaOpcao1,
     textoFimDeJogoJaneComDianaOpcao2
