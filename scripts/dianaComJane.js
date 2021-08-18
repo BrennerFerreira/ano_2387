@@ -1,96 +1,73 @@
-function avancarParaFimDianaComJane(number) {
-  if (number == 1) {
-    document.write(`
-              <p class="resposta">
-              A cabeça dela já está decidida.
-              </p>
-              <p>
-              Você respira fundo e percebe que não tem mais jeito. Nada do que
-              você fale iria mudar a mente dela. Você passa os próximos dias
-              organizando tudo com Jane. Mas, ela não parece estar ali. Sua
-              mente está em outro lugar. É como se ela fizesse tudo no modo
-              automático.
-              </p>
-              <p>
-              Os dias se passam e ele está aqui! O filho de Jane nasceu. Uma
-              alegria toma conta do corpo dela. Será suficiente para ela mudar
-              de ideia? Você a leva para casa e observa enquanto ela cuida do
-              filho. Ela parece bem.
-              </p>
-              <p>
-              À noite, você retorna para sua casa e vai tomar um banho para
-              relaxar. Quando sai, pega seu telefone e vê uma mensagem de Jane:
-              "Obrigada por me dar alegria nesse último mês. Meu filho vai ser
-              registrado e você será uma ótima mãe para ele. Adeus."
-              </p>
-              <p>
-              Seu coração dispara. Você sai de casa correndo e vai em direção à
-              casa de Jane. Chegando lá, abre a porta e começa a procurar a
-              amiga. Chegando ao quarto do bebê, o encontra deitado em seu
-              berço dormindo e caída ao lado do berço está Jane. Você não
-              chegou a tempo.
-              </p>
-              <p>
-              Apesar da situação, você encontrou sua missão: cuidar e dar
-              alegria a uma nova vida que chegou a esse mundo.
-              </p>
-              `);
-  } else if (number == 2) {
-    document.write(`
-              <p class="resposta">
-              Não posso deixar ela fazer isso!
-              </p>
-              <p>
-              Você pede para ela tirar aqueles pensamentos da mente. Que você a
-              ajudará em tudo. Não precisa chegar nesse ponto extremo. Jane se
-              acalma e, em poucos minutos, exausta, já está dormindo.
-              </p>
-              <p>
-              Os dias se passam e ele está aqui! O filho de Jane nasceu. Toda
-              aquela tristeza que havia no rosto dela desaparece. Ela se enche
-              de alegria vendo o rosto do bebê. Você sabe que não vai ser
-              fácil, mas, ela será uma ótima mãe, mesmo que ele não possa ter
-              acesso a tudo aquilo que seria necessário.
-              </p>
-              <p>
-              E você tem um novo objetivo para a sua vida: ajudar essa família
-              a ser a melhor que ela possa ser.
-              </p>
-              `);
-  } else {
-    location.href = "./game-over.html";
-  }
-
+function textoFimDeJogoDianaComJaneOpcao1() {
   document.write(`
-              <button onclick="reiniciar()">Jogar novamente</button>
-              `);
+        <p class="resposta">
+        A cabeça dela já está decidida.
+        </p>
+        <p>
+        Você respira fundo e percebe que não tem mais jeito. Nada do que
+        você fale iria mudar a mente dela. Você passa os próximos dias
+        organizando tudo com Jane. Mas, ela não parece estar ali. Sua
+        mente está em outro lugar. É como se ela fizesse tudo no modo
+        automático.
+        </p>
+        <p>
+        Os dias se passam e ele está aqui! O filho de Jane nasceu. Uma
+        alegria toma conta do corpo dela. Será suficiente para ela mudar
+        de ideia? Você a leva para casa e observa enquanto ela cuida do
+        filho. Ela parece bem.
+        </p>
+        <p>
+        À noite, você retorna para sua casa e vai tomar um banho para
+        relaxar. Quando sai, pega seu telefone e vê uma mensagem de Jane:
+        "Obrigada por me dar alegria nesse último mês. Meu filho vai ser
+        registrado e você será uma ótima mãe para ele. Adeus."
+        </p>
+        <p>
+        Seu coração dispara. Você sai de casa correndo e vai em direção à
+        casa de Jane. Chegando lá, abre a porta e começa a procurar a
+        amiga. Chegando ao quarto do bebê, o encontra deitado em seu
+        berço dormindo e caída ao lado do berço está Jane. Você não
+        chegou a tempo.
+        </p>
+        <p>
+        Apesar da situação, você encontrou sua missão: cuidar e dar
+        alegria a uma nova vida que chegou a esse mundo.
+        </p>
+        <button onclick="reiniciar()">Jogar novamente</button>
+    `);
 }
 
-function escolhaDianaComJaneFase3() {
-  var opcaoEscolhidaDianaComJaneFase3 = prompt(`
-          Qual será a sua escolha?
-          1 - Concordar com Jane
-          2 - Tentar convencê-la de mudar de ideia
-        `);
-
-  while (true) {
-    if (
-      opcaoEscolhidaDianaComJaneFase3 == 1 ||
-      opcaoEscolhidaDianaComJaneFase3 == 2
-    ) {
-      break;
-    }
-    opcaoEscolhidaDianaComJaneFase3 = prompt(`
-            Digite apenas o número da sua opção.
-            1 - Concordar com Jane
-            2 - Tentar convencê-la de mudar de ideia
-          `);
-  }
-  return opcaoEscolhidaDianaComJaneFase3;
+function textoFimDeJogoDianaComJaneOpcao2() {
+  document.write(`
+        <p class="resposta">
+        Não posso deixar ela fazer isso!
+        </p>
+        <p>
+        Você pede para ela tirar aqueles pensamentos da mente. Que você a
+        ajudará em tudo. Não precisa chegar nesse ponto extremo. Jane se
+        acalma e, em poucos minutos, exausta, já está dormindo.
+        </p>
+        <p>
+        Os dias se passam e ele está aqui! O filho de Jane nasceu. Toda
+        aquela tristeza que havia no rosto dela desaparece. Ela se enche
+        de alegria vendo o rosto do bebê. Você sabe que não vai ser
+        fácil, mas, ela será uma ótima mãe, mesmo que ele não possa ter
+        acesso a tudo aquilo que seria necessário.
+        </p>
+        <p>
+        E você tem um novo objetivo para a sua vida: ajudar essa família
+        a ser a melhor que ela possa ser.
+        </p>
+        <button onclick="reiniciar()">Jogar novamente</button>
+    `);
 }
 
 function finalizarDianaComJaneFase3() {
-  avancarParaFimDianaComJane(escolhaDianaComJaneFase3());
+  avancarParaFase2(
+    mostrarPrompt("Concordar com Jane", "Tentar convencê-la de mudar de ideia"),
+    textoFimDeJogoDianaComJaneOpcao1,
+    textoFimDeJogoDianaComJaneOpcao2
+  );
 }
 
 function textoDianaComJaneFase3() {
@@ -134,58 +111,33 @@ function textoDianaComJaneFase3() {
           você. O que fazer nesse momento?
           </p>
           `;
-
-  document.write(texto);
-
-  return setTimeout(finalizarDianaComJaneFase3, texto.length * 20);
+  escreverTexto(texto, finalizarDianaComJaneFase3);
 }
 
-function avancarParaDianaComJaneFase3(number) {
-  if (number == 1) {
-    textoDianaComJaneFase3();
-  } else if (number == 2) {
-    document.write(`
-              <p class="resposta">
-              Não vou mais atrapalhar o dia dela.
-              </p>
-              <p>
-              Eu já importunei muito essa mulher. Melhor deixar ela seguir a
-              vida dela. Você se despede da moça, pensando que vocês duas
-              poderiam ser ótimas amigas caso se encontrassem em outras
-              circunstâncias.
-              </p>
-              <button onclick="reiniciar()">Jogar novamente</button>
-              `);
-  } else {
-    location.href = "./game-over.html";
-  }
-}
-
-function escolhaDianaComJaneFase2() {
-  var opcaoEscolhidaDianaComJaneFase2 = prompt(`
-          Qual será a sua escolha?
-          1 - Chamar a jovem para continuar a conversa
-          2 - Se despedir da jovem
-        `);
-
-  while (true) {
-    if (
-      opcaoEscolhidaDianaComJaneFase2 == 1 ||
-      opcaoEscolhidaDianaComJaneFase2 == 2
-    ) {
-      break;
-    }
-    opcaoEscolhidaDianaComJaneFase2 = prompt(`
-            Digite apenas o número da sua opção.
-            1 - Chamar a jovem para continuar a conversa
-            2 - Se despedir da jovem
-          `);
-  }
-  return opcaoEscolhidaDianaComJaneFase2;
+function textoFimDeJogoDianaComJaneFase2() {
+  document.write(`
+        <p class="resposta">
+        Não vou mais atrapalhar o dia dela.
+        </p>
+        <p>
+        Eu já importunei muito essa mulher. Melhor deixar ela seguir a
+        vida dela. Você se despede da moça, pensando que vocês duas
+        poderiam ser ótimas amigas caso se encontrassem em outras
+        circunstâncias.
+        </p>
+        <button onclick="reiniciar()">Jogar novamente</button>
+    `);
 }
 
 function finalizarDianaComJaneFase2() {
-  avancarParaDianaComJaneFase3(escolhaDianaComJaneFase2());
+  avancarParaFase2(
+    mostrarPrompt(
+      "Chamar a jovem para continuar a conversa",
+      "Se despedir da jovem"
+    ),
+    textoDianaComJaneFase3,
+    textoFimDeJogoDianaComJaneFase2
+  );
 }
 
 function textoDianaComJaneFase2() {
@@ -222,7 +174,6 @@ function textoDianaComJaneFase2() {
           continuar. E agora?
           </p>
           `;
-  document.write(texto);
 
-  return setTimeout(finalizarDianaComJaneFase2, texto.length * 20);
+  escreverTexto(texto, finalizarDianaComJaneFase2);
 }

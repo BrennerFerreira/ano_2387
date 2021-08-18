@@ -1,6 +1,5 @@
-function avancarParaFimDianaComMark(number) {
-  if (number == 1) {
-    document.write(`
+function textoFimDeJogoDianaComMarkOpcao1() {
+  document.write(`
             <p class="resposta">
             Não sei exatamente o motivo. Mas, aceito.
             </p>
@@ -31,9 +30,12 @@ function avancarParaFimDianaComMark(number) {
             próximos 15 anos, você tem um objetivo de vida. Depois, poderá
             encontrar John novamente.
             </p>
+            <button onclick="reiniciar()">Jogar novamente</button>
             `);
-  } else if (number == 2) {
-    document.write(`
+}
+
+function textoFimDeJogoDianaComMarkOpcao2() {
+  document.write(`
             <p class="resposta">
             Matar uma pessoa? Jamais!
             </p>
@@ -43,41 +45,16 @@ function avancarParaFimDianaComMark(number) {
             outra. Você recusa e volta para casa. O dia já foi diferente,
             quem sabe amanhã também não seja melhor.
             </p>
-            `);
-  } else {
-    location.href = "./game-over.html";
-  }
-
-  document.write(`
             <button onclick="reiniciar()">Jogar novamente</button>
             `);
 }
 
-function escolhaDianaComMarkFase3() {
-  var opcaoEscolhidaDianaComMarkFase3 = prompt(`
-        Qual será a sua escolha?
-        1 - Aceitar a missão de Mark
-        2 - Rejeitar a missão de Mark
-      `);
-
-  while (true) {
-    if (
-      opcaoEscolhidaDianaComMarkFase3 == 1 ||
-      opcaoEscolhidaDianaComMarkFase3 == 2
-    ) {
-      break;
-    }
-    opcaoEscolhidaDianaComMarkFase3 = prompt(`
-          Digite apenas o número da sua opção.
-          1 - Aceitar a missão de Mark
-          2 - Rejeitar a missão de Mark
-        `);
-  }
-  return opcaoEscolhidaDianaComMarkFase3;
-}
-
 function finalizarDianaComMarkFase3() {
-  avancarParaFimDianaComMark(escolhaDianaComMarkFase3());
+  avancarParaFase2(
+    mostrarPrompt("Aceitar a missão de Mark", "Rejeitar a missão de Mark"),
+    textoFimDeJogoDianaComMarkOpcao1,
+    textoFimDeJogoDianaComMarkOpcao2
+  );
 }
 
 function textoDianaComMarkFase3() {
@@ -129,17 +106,11 @@ function textoDianaComMarkFase3() {
         dividida, sem saber o que fazer.
         </p>
         `;
-
-  document.write(texto);
-
-  return setTimeout(finalizarDianaComMarkFase3, texto.length * 20);
+  escreverTexto(texto, finalizarDianaComMarkFase3);
 }
 
-function avancarParaDianaComMarkFase3(number) {
-  if (number == 1) {
-    textoDianaComMarkFase3();
-  } else if (number == 2) {
-    document.write(`
+function textoFimDeJogoDianaComMarkFase2() {
+  document.write(`
             <p class="resposta">
             Não posso me encontrar com ele.
             </p>
@@ -150,36 +121,14 @@ function avancarParaDianaComMarkFase3(number) {
             </p>
             <button onclick="reiniciar()">Jogar novamente</button>
             `);
-  } else {
-    location.href = "./game-over.html";
-  }
-}
-
-function escolhaDianaComMarkFase2() {
-  var opcaoEscolhidaDianaComMarkFase2 = prompt(`
-        Qual será a sua escolha?
-        1 - Encontrar com Mark
-        2 - Não se encontrar com Mark
-      `);
-
-  while (true) {
-    if (
-      opcaoEscolhidaDianaComMarkFase2 == 1 ||
-      opcaoEscolhidaDianaComMarkFase2 == 2
-    ) {
-      break;
-    }
-    opcaoEscolhidaDianaComMarkFase2 = prompt(`
-          Digite apenas o número da sua opção.
-          1 - Encontrar com Mark
-          2 - Não se encontrar com Mark
-        `);
-  }
-  return opcaoEscolhidaDianaComMarkFase2;
 }
 
 function finalizarDianaComMarkFase2() {
-  avancarParaDianaComMarkFase3(escolhaDianaComMarkFase2());
+  avancarParaFase2(
+    mostrarPrompt("Encontrar com Mark", "Não se encontrar com Mark"),
+    textoDianaComMarkFase3,
+    textoFimDeJogoDianaComMarkFase2
+  );
 }
 
 function textoDianaComMarkFase2() {
@@ -216,7 +165,6 @@ function textoDianaComMarkFase2() {
         ele?
         </p>
         `;
-  document.write(texto);
 
-  return setTimeout(finalizarDianaComMarkFase2, texto.length * 20);
+  escreverTexto(texto, finalizarDianaComMarkFase2);
 }
