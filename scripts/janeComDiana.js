@@ -8,7 +8,7 @@ function avancarParaFimJaneComDiana(number) {
             Não tem jeito. Meu filho merece ter um futuro digno. Você pega um
             conjunto de remédios controlados que foram prescritos para a sua
             depressão e os toma. Quando está quase perdendo os sentidos, manda
-            uma mensagem para Diana: "Obrigado por me dar alegria nesse último
+            uma mensagem para Diana: "Obrigada por me dar alegria nesse último
             mês. Meu filho vai ser registrado e você será uma ótima mãe para
             ele. Adeus."
             </p>
