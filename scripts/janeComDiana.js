@@ -148,5 +148,5 @@ function textoJaneComDianaFase2() {
         </p>
         `;
 
-  escreverText(texto, finalizarJaneComDianaFase2);
+  escreverTexto(texto, finalizarJaneComDianaFase2);
 }
