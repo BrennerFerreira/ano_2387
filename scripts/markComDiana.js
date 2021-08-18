@@ -1,6 +1,5 @@
-function avancarParaFimMarkComDiana(number) {
-  if (number == 1) {
-    document.write(`
+function textoFimDeJogoMarkComDianaOpcao1() {
+  document.write(`
         <p class="resposta">
         Ela tem experiência atirando. Melhor ela atuar de longe.
         </p>
@@ -26,9 +25,12 @@ function avancarParaFimMarkComDiana(number) {
         felicidade do casal em poder registrar os filhos e tem a certeza de que
         essa parceria ainda vai render bons frutos.
         </p>
+        <button onclick="reiniciar()">Jogar novamente</button>
       `);
-  } else if (number == 2) {
-    document.write(`
+}
+
+function textoFimDeJogoMarkComDianaOpcao2() {
+  document.write(`
         <p class="resposta">
         É melhor ela estar perto de mim quando ele morrer. Posso controlá-la
         melhor caso algo saia do controle.
@@ -51,41 +53,19 @@ function avancarParaFimMarkComDiana(number) {
         será que foi o último? Será que ela vai te denunciar? Só o tempo pode
         responder a essas perguntas.
         </p>
+        <button onclick="reiniciar()">Jogar novamente</button>
       `);
-  } else {
-    location.href = "./game-over.html";
-  }
-
-  document.write(`
-              <button onclick="reiniciar()">Jogar novamente</button>
-              `);
-}
-
-function escolhaMarkComDianaFase3() {
-  var opcaoEscolhidaMarkComDianaFase3 = prompt(`
-          Qual será a sua escolha?
-          1 - Pedir para Diana ficar no carro, como atiradora
-          2 - Pedir para Diana ajudar no combate corpo a corpo
-        `);
-
-  while (true) {
-    if (
-      opcaoEscolhidaMarkComDianaFase3 == 1 ||
-      opcaoEscolhidaMarkComDianaFase3 == 2
-    ) {
-      break;
-    }
-    opcaoEscolhidaMarkComDianaFase3 = prompt(`
-        Digite apenas o número da sua opção.
-        1 - Pedir para Diana ficar no carro, como atiradora
-        2 - Pedir para Diana ajudar no combate corpo a corpo
-      `);
-  }
-  return opcaoEscolhidaMarkComDianaFase3;
 }
 
 function finalizarMarkComDianaFase3() {
-  avancarParaFimMarkComDiana(escolhaMarkComDianaFase3());
+  avancarParaFase2(
+    mostrarPrompt(
+      "Pedir para Diana ficar no carro, como atiradora",
+      "Pedir para Diana ajudar no combate corpo a corpo"
+    ),
+    textoFimDeJogoMarkComDianaOpcao1,
+    textoFimDeJogoMarkComDianaOpcao2
+  );
 }
 
 function textoMarkComDianaFase3() {
@@ -133,16 +113,11 @@ function textoMarkComDianaFase3() {
     </p>
     `;
 
-  document.write(texto);
-
-  return setTimeout(finalizarMarkComDianaFase3, texto.length * 20);
+  escreverTexto(texto, finalizarMarkComDianaFase3);
 }
 
-function avancarParaMarkComDianaFase3(number) {
-  if (number == 1) {
-    textoMarkComDianaFase3();
-  } else if (number == 2) {
-    document.write(`
+function textoFimDeJogoMarkComDianaFase2() {
+  document.write(`
         <p class="resposta">
         Nem pensar em chamar outra pessoa para fazer esses serviços.
         </p>
@@ -158,36 +133,17 @@ function avancarParaMarkComDianaFase3(number) {
         </p>
         <button onclick="reiniciar()">Jogar novamente</button>
       `);
-  } else {
-    location.href = "./game-over.html";
-  }
-}
-
-function escolhaMarkComDianaFase2() {
-  var opcaoEscolhidaMarkComDianaFase2 = prompt(`
-          Qual será a sua escolha?
-          1 - Tentar convidar Diana para participar dos seus serviços
-          2 - Esquecer isso e continuar fazendo tudo sozinho
-        `);
-
-  while (true) {
-    if (
-      opcaoEscolhidaMarkComDianaFase2 == 1 ||
-      opcaoEscolhidaMarkComDianaFase2 == 2
-    ) {
-      break;
-    }
-    opcaoEscolhidaMarkComDianaFase2 = prompt(`
-          Digite apenas o número da sua opção.
-          1 - Tentar convidar Diana para participar dos seus serviços
-          2 - Esquecer isso e continuar fazendo tudo sozinho
-      `);
-  }
-  return opcaoEscolhidaMarkComDianaFase2;
 }
 
 function finalizarMarkComDianaFase2() {
-  avancarParaMarkComDianaFase3(escolhaMarkComDianaFase2());
+  avancarParaFase2(
+    mostrarPrompt(
+      "Tentar convidar Diana para participar dos seus serviços",
+      "Esquecer isso e continuar fazendo tudo sozinho"
+    ),
+    textoMarkComDianaFase3,
+    textoFimDeJogoMarkComDianaFase2
+  );
 }
 
 function textoMarkComDianaFase2() {
@@ -225,7 +181,5 @@ function textoMarkComDianaFase2() {
         </p>
       `;
 
-  document.write(texto);
-
-  return setTimeout(finalizarMarkComDianaFase2, texto.length * 20);
+  escreverTexto(texto, finalizarMarkComDianaFase2);
 }

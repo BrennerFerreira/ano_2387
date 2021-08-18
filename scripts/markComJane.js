@@ -1,6 +1,5 @@
-function avancarParaFimMarkComJane(number) {
-  if (number == 1) {
-    document.write(`
+function textoFimDeJogoMarkComJaneOpcao1() {
+  document.write(`
             <p class="resposta">
             Apesar daquele grupo por perto, será mais fácil lidar com alguém
             que está bêbado.
@@ -17,9 +16,11 @@ function avancarParaFimMarkComJane(number) {
             em casa e segue seu rumo, sentindo que contribuiu para um mundo
             melhor e renovado.
             </p>
+            <button onclick="reiniciar()">Jogar novamente</button>
             `);
-  } else if (number == 2) {
-    document.write(`
+}
+function textoFimDeJogoMarkComJaneOpcao2() {
+  document.write(`
             <p class="resposta">
             Ele está sozinho. Será mais fácil de lidar com ele sem chamar
             atenção.
@@ -38,41 +39,16 @@ function avancarParaFimMarkComJane(number) {
             mal consigo mesmo, mas precisa entender que há momentos nos quais
             arriscar é a pior escolha.
             </p>
-            `);
-  } else {
-    location.href = "./game-over.html";
-  }
-
-  document.write(`
             <button onclick="reiniciar()">Jogar novamente</button>
             `);
 }
 
-function escolhaMarkComJaneFase3() {
-  var opcaoEscolhidaMarkComJaneFase3 = prompt(`
-        Qual será a sua escolha?
-        1 - Rapaz bêbado
-        2 - Homem sozinho
-      `);
-
-  while (true) {
-    if (
-      opcaoEscolhidaMarkComJaneFase3 == 1 ||
-      opcaoEscolhidaMarkComJaneFase3 == 2
-    ) {
-      break;
-    }
-    opcaoEscolhidaMarkComJaneFase3 = prompt(`
-          Digite apenas o número da sua opção.
-          1 - Rapaz bêbado
-          2 - Homem sozinho
-        `);
-  }
-  return opcaoEscolhidaMarkComJaneFase3;
-}
-
 function finalizarMarkComJaneFase3() {
-  avancarParaFimMarkComJane(escolhaMarkComJaneFase3());
+  avancarParaFase2(
+    mostrarPrompt("Rapaz bêbado", "Homem sozinho"),
+    textoFimDeJogoMarkComJaneOpcao1,
+    textoFimDeJogoMarkComJaneOpcao2
+  );
 }
 
 function textoMarkComJaneFase3() {
@@ -100,16 +76,11 @@ function textoMarkComJaneFase3() {
         </p>
         `;
 
-  document.write(texto);
-
-  return setTimeout(finalizarMarkComJaneFase3, texto.length * 20);
+  escreverTexto(texto, finalizarMarkComJaneFase3);
 }
 
-function avancarParaMarkComJaneFase3(number) {
-  if (number == 1) {
-    textoMarkComJaneFase3();
-  } else if (number == 2) {
-    document.write(`
+function textoFimDeJogoMarkComJaneFase2() {
+  document.write(`
         <p class="resposta">
         Não posso arriscar a vida dela. Não consigo!
         </p>
@@ -121,41 +92,21 @@ function avancarParaMarkComJaneFase3(number) {
         </p>
         <button onclick="reiniciar()">Jogar novamente</button>
     `);
-  } else {
-    location.href = "./game-over.html";
-  }
-}
-
-function escolhaMarkComJaneFase2() {
-  var opcaoEscolhidaMarkComJaneFase2 = prompt(`
-        Qual será a sua escolha?
-        1 - Arriscar continuar com o plano
-        2 - Recusar o plano
-      `);
-
-  while (true) {
-    if (
-      opcaoEscolhidaMarkComJaneFase2 == 1 ||
-      opcaoEscolhidaMarkComJaneFase2 == 2
-    ) {
-      break;
-    }
-    opcaoEscolhidaMarkComJaneFase2 = prompt(`
-        Digite apenas o número da sua opção.
-        1 - Arriscar continuar com o plano
-        2 - Recusar o plano
-    `);
-  }
-  return opcaoEscolhidaMarkComJaneFase2;
 }
 
 function finalizarMarkComJaneFase2() {
-  avancarParaMarkComJaneFase3(escolhaMarkComJaneFase2());
+  avancarParaFase2(
+    mostrarPrompt("Arriscar continuar com o plano", "Recusar o plano"),
+    textoMarkComJaneFase3,
+    textoFimDeJogoMarkComJaneFase2
+  );
 }
 
 function textoMarkComJaneFase2() {
   var texto = `
-    <p class="resposta">Vou mandar alguém ver o que há com esta senhora.</p>
+    <p class="resposta">
+    Vou mandar alguém ver o que há com esta senhora.
+    </p>
     <p>
     Você decide chamar um colega e pedir para ele ver o que está acontecendo.
     Ao atender o telefone, ouve uma voz trêmula falando algo sobre conhecer
@@ -182,7 +133,5 @@ function textoMarkComJaneFase2() {
     </p>
     `;
 
-  document.write(texto);
-
-  return setTimeout(finalizarMarkComJaneFase2, texto.length * 20);
+  escreverTexto(texto, finalizarMarkComJaneFase2);
 }

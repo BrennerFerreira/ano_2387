@@ -1,35 +1,9 @@
-function avancarParaFase2Mark(number) {
-  if (number == 1) {
-    textoMarkComDianaFase2();
-  } else if (number == 2) {
-    textoMarkComJaneFase2();
-  } else {
-    location.href = "./game-over.html";
-  }
-}
-
-function escolhaDaFase1Mark() {
-  var opcaoEscolhidaMarkFase1 = prompt(`
-    Qual será a sua escolha?
-    1 - Ir até a senhora
-    2 - Atender o telefone
-  `);
-
-  while (true) {
-    if (opcaoEscolhidaMarkFase1 == 1 || opcaoEscolhidaMarkFase1 == 2) {
-      break;
-    }
-    opcaoEscolhidaMarkFase1 = prompt(`
-      Digite apenas o número da sua opção.
-      1 - Ir até a senhora
-      2 - Atender o telefone
-    `);
-  }
-  return opcaoEscolhidaMarkFase1;
-}
-
 function finalizarFase1Mark() {
-  avancarParaFase2Mark(escolhaDaFase1Mark());
+  avancarParaFase2(
+    mostrarPrompt("Ir até a senhora", "Atender o telefone"),
+    textoMarkComDianaFase2,
+    textoMarkComJaneFase2
+  );
 }
 
 function textoMarkFase1() {
@@ -74,7 +48,6 @@ function textoMarkFase1() {
     </p>
     </main>
     `;
-  document.write(texto);
 
-  return setTimeout(finalizarFase1Mark, texto.length * 20);
+  escreverTexto(texto, finalizarFase1Mark);
 }
