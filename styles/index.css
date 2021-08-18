@@ -60,13 +60,13 @@ button {
   background-color: yellow;
   border-radius: 25px;
   border: none;
-  box-shadow: 0 0 20px -5px rgba(255, 255, 0, 0.479);
+  box-shadow: 0 0 20px -5px rgba(255, 255, 0, 0.6);
   transition: box-shadow 0.5s;
 }
 
 button:hover {
   cursor: pointer;
-  box-shadow: 0 0 10px -5px rgba(255, 255, 0, 0.479);
+  box-shadow: 0 0 10px -5px rgba(255, 255, 0, 0.6);
 }
 
 .resposta {
